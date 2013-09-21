@@ -1,0 +1,23 @@
+{
+    "name": "mongoose-data-migrations",
+    "description": "Performs mongoose data migrations on document init",
+    "author": "Chris Morrell (http://cmorrell.com)",
+    "version": "0.0.1",
+    "main": "./lib/index.js",
+    "scripts": {
+        "test": "./node_modules/vows/bin/vows ./test/* --spe"
+    },
+    "engines": {
+        "node": ">=0.8"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/inxilpro/mongoose-data-migrations"
+    },
+    "bugs": "https://github.com/inxilpro/mongoose-data-migrations/issues",
+    "license": "MIT",
+    "devDependencies": {
+        "vows": "0.7.x",
+        "sinon": "1.7.x"
+    }
+}
