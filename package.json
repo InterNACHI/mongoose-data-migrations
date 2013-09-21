@@ -2,7 +2,7 @@
     "name": "mongoose-data-migrations",
     "description": "Performs mongoose data migrations on document init",
     "author": "Chris Morrell (http://cmorrell.com)",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "main": "./lib/index.js",
     "scripts": {
         "test": "./node_modules/vows/bin/vows ./test/* --spe"
