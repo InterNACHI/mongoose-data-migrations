@@ -8,7 +8,12 @@ Performs mongoose data migrations on document init.
 var schema = new mongoose.Schema({ /* ... */ });
 
 var currentSchemaVersion = 2;
-migrations(schema, currentSchemaVersion).add({
+var opts = {
+    versionKey: '__sv',   // The default
+    saveOnMigration: true // Also the default
+};
+
+migrations(schema, currentSchemaVersion, opts).add({
     version: 1,
     up: function(data) {
         var nameParts = data.name.split(' ', 2);
