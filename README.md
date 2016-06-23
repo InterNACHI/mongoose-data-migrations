@@ -15,20 +15,23 @@ var opts = {
 
 migrations(schema, currentSchemaVersion, opts).add({
     version: 1,
-    up: function(data) {
+    up: function() {
+        var data = this;
         var nameParts = data.name.split(' ', 2);
         data.firstName = nameParts[0];
         data.lastName = nameParts[1];
         delete data.name;
     },
-    down: function(data) {
+    down: function() {
+        var data = this;
         data.name = data.firstName + ' ' + data.lastName;
         delete data.firstName;
         delete data.lastName;
     }
 }).add({
     version: 2,
-    up: function(data) {
+    up: function() {
+        var data = this;
         var lastNameParts = data.lastName.split(',', 2);
         data.suffix = null;
         if (2 == lastNameParts.length) {
@@ -36,7 +39,8 @@ migrations(schema, currentSchemaVersion, opts).add({
             data.suffix = lastNameParts[1].replace(/^\s/, '');
         }
     },
-    down: function(data) {
+    down: function() {
+        var data = this;
         if (data.suffix) {
             data.lastName += ', ' + data.suffix;
             delete data.suffix;
